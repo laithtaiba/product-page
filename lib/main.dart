@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp2/pages/add-to-cart-button.dart';
+import 'package:myapp2/pages/product-size.dart';
 
 void main() {
   runApp(const MyApp());
@@ -99,59 +101,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     "its sample and elegant shape makes it perfect for\nthose of you who like who want minimalist\nclothes",
                     style: TextStyle(fontWeight: FontWeight.w100),),
                     const SizedBox(height: 20,),
-                     Row(
+                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                           const Text("Choose Size",style: TextStyle(fontWeight: FontWeight.w600),),
-                           const SizedBox(height: 10,),
-                          Row(
-                            children: [
-                              Container(
-                        width: 25,
-                        height: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          border: Border.all(width: 1,color: Colors.grey)
-                        ),
-                        child: const Center(child: Text("S")),
-                      ),
-                      const SizedBox(width: 3,),
-                      Container(
-                        width: 25,
-                        height: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          border: Border.all(width: 1,color: Colors.grey)
-                        ),
-                        child: const Center(child: Text("M")),
-                      ),
-                      const SizedBox(width: 3,),
-                      Container(
-                        width: 25,
-                        height: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          border: Border.all(width: 1,color: Colors.grey)
-                        ),
-                        child: const Center(child: Text("L")),
-                      ),
-                      const SizedBox(width: 3,),
-                      Container(
-                        width: 25,
-                        height: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          border: Border.all(width: 1,color: Colors.grey)
-                        ),
-                        child: const Center(child: Text("XL")),
-                      ),
-                        ],)
+                            Text("Choose Size",style: TextStyle(fontWeight: FontWeight.w600),),
+                            SizedBox(height: 10,),
+                           ProductSize(),
                             ],
                           ),
-                          const Column(
+                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Color",style: TextStyle(fontWeight: FontWeight.w600),),
@@ -168,28 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                       const SizedBox(height: 25,),
-                       Container(
-                        width: double.infinity,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(40)
-                        ),
-                        child: const InkWell(
-                          
-                          child: Center(
-                            child: Text(
-                              "Add To Cart",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w700,
-                                ),
-                                ),
-                                
-                                ),
-                        ),
-                       )
+                       const AddToCartButton(),
                     ],
                   ),
           )
